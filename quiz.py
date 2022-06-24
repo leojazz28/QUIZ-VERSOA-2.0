@@ -55,9 +55,10 @@ resposta3 = Alternativas("TAMBOR", "HARPA", "FLAUTA")
 resposta4 = Alternativas("OS FARISESUS", "JESUS", "Abraão, Isaque e Jacó")
 
 #print(resposta1.mostrar())
-sair_do_jogo = True
+sair_do_jogo = True  # sair do jogo
 contador1 = 0 #contardor de opção errada
-jogador = 0
+jogador = 0 # contador de reias do jogador
+contador2 = 0 # cotador do pulo
 print()
 print("Seja bem vindo!")
 nome = input("Digite seu nome: ").upper()
@@ -78,8 +79,7 @@ while sair_do_jogo:
                 print(resposta1.mostrar()) # opçoes
                 
                 sua_resposta = str(input("Digite uma Opeção:"))
-                print()
-#====================================================================#               
+                print()             
                 # pergunta de numero um 01 resposta e a 2
                 if sua_resposta == "2":
                     print("CERTA RESPOSTA!")
@@ -88,16 +88,24 @@ while sair_do_jogo:
                     print(f"{nome} GANHOU {jogador}")
                     break
                 elif sua_resposta == "5":
-                    print(amarelo,"Voçe pulou a pergunta de numero {x}!",resete)
-                    continue
-                elif sua_resposta == 6:
-                    print("AH!! VOÇE PAROU!")
+                    print(amarelo,f"Voçe pulou a pergunta de numero {x}!",resete)
+                    if sua_resposta == "5" and contador2 >= 1:
+                        print(vermelho,"Voce ja usou a opção de pulo",resete)
+                        continue
+                    contador2 += 1
+                    break
+                elif sua_resposta == "6":
+                    print("AH!! VOCE PAROU!")
                     print(f"{nome} leva {jogador} R$")
+                    exit()
                 elif sua_resposta == "4" or sua_resposta == "7":
-                    print("opção invalida!")
+                    print(verleho,"opção invalida!",resete)
+                    exit()
                     
                 elif sua_resposta == "8" or sua_resposta == "9":
-                    print("opção invalida!")
+                    print(vermelho,"opção inválida!",resete)
+                    exit()
+                    
                 elif sua_resposta == "0" or  not sua_resposta.isnumeric() :
                     print(vermelho,"opção invalida!",resete)    
                 else:
@@ -121,17 +129,26 @@ while sair_do_jogo:
                     break
                 elif sua_resposta == "5":
                     print(amarelo,"Voçe pulou a pergunta de numero {x}!",resete)
-                    continue
-                elif sua_resposta == 6:
+                    if sua_resposta == "5" and contador2 >= 1:
+                        print(vermelho,"Voce ja usou a opção de pulo",resete)
+                        continue
+                    contador2 += 1
+                    break
+                elif sua_resposta == "6":
                     print("AH!! VOÇE PAROU!")
                     print(f"{nome} leva {jogador} R$")
+                    exit()
                 elif sua_resposta == "4" or sua_resposta == "7":
-                    print("opção invalida!")
+                    print(vermelho,"opção invalida!",resete)
+                    exit()
                     
                 elif sua_resposta == "8" or sua_resposta == "9":
                     print("opção invalida!")
+                    exit()
                 elif sua_resposta == "0" or  not sua_resposta.isnumeric() :
-                    print(vermelho,"opção invalida!",resete)    
+                    print(vermelho,"opção invalida!",resete)
+                    exit()
+                    
                 else:
                     print(vermelho,"Resposta errada!",resete)
                     print(vermelho,f"Voçe perdeu leva {jogador} pra casa!",resete)
@@ -153,23 +170,34 @@ while sair_do_jogo:
                     break
                 elif sua_resposta == "5":
                     print(amarelo,"Voçe pulou a pergunta de numero {x}!",resete)
-                    continue
-                elif sua_resposta == 6:
+                    if sua_resposta == "5" and contador2 >= 1:
+                        print(vermelho,"Voce ja usou a opção de pulo",resete)
+                        continue
+                    contador2 += 1
+                    break
+                elif sua_resposta == "6":
                     print("AH!! VOÇE PAROU!")
                     print(f"{nome} leva {jogador} R$")
+                    exit()
+                    
                 elif sua_resposta == "4" or sua_resposta == "7":
                     print("opção invalida!")
+                    exit()
                     
                 elif sua_resposta == "8" or sua_resposta == "9":
                     print("opção invalida!")
+                    exit()
+                    
                 elif sua_resposta == "0" or  not sua_resposta.isnumeric() :
-                    print(vermelho,"opção invalida!",resete)    
+                    print(vermelho,"opção invalida!",resete)
+                    exit()
+                    
                 else:
                     print(vermelho,"Resposta errada!",resete)
                     print(vermelho,f"Voçe perdeu leva {jogador} pra casa!",resete)
                     exit()
-                #pergunta de numero 4
-
+                    
+            #pergunta de numero 4 ========================================================
             if x == "04":
                 print(f"PERGUNTA DE NUMERO {x}")
                 print()
@@ -186,21 +214,33 @@ while sair_do_jogo:
                     break
                 elif sua_resposta == "5":
                     print(amarelo,"Voçe pulou a pergunta de numero {x}!",resete)
-                    continue
-                elif sua_resposta == 6:
+                    if sua_resposta == "5" and contador2 >= 1:
+                        print(vermelho,"Voce ja usou a opção de pulo",resete)
+                        continue
+                    contador2 += 1
+                    break
+                elif sua_resposta == "6":
                     print("AH!! VOÇE PAROU!")
                     print(f"{nome} leva {jogador} R$")
                 elif sua_resposta == "4" or sua_resposta == "7":
                     print("opção invalida!")
+                    exit()
                     
                 elif sua_resposta == "8" or sua_resposta == "9":
                     print("opção invalida!")
+                    exit()
+                    
                 elif sua_resposta == "0" or  not sua_resposta.isnumeric() :
-                    print(vermelho,"opção invalida!",resete)    
+                    print(vermelho,"opção invalida!",resete)
+                    exit()
+                    
                 else:
                     print(vermelho,"Resposta errada!",resete)
                     print(vermelho,f"Voçe perdeu leva {jogador} pra casa!",resete)
                     exit()
+                    
+                    
+            contador2 += 1       
             contador1 += 1
                 
     
